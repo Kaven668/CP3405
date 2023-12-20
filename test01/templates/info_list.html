@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body>
+<h1>INFO List</h1>
+<h3><a href="/info/add">添加用户</a></h3>
+<table border="1">
+    <thead>
+    <tr>
+{#   th 表格开头第一行   tr 增加一条水平线   #}
+        <th>ID</th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in data_list %}
+        <tr>
+{#  td 表格元素   #}
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.password }}</td>
+            <td>{{ i.age }}</td>
+            <td>
+                <a href="http://localhost:8000/info/delete/?id={{ i.id }}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
